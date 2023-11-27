@@ -11,7 +11,7 @@ public abstract class LexicalParser {
             //read the file in and create a new instance of the file class using the path provided
             String file = new String(Files.readAllBytes(path));
             //split the created file based on sentence ending punctuation
-            String[] sentences = file.split("[.!?]");
+            String[] sentences = file.split("(?<=[.!?])");
             //create the list of sentences that will be returned
             List<String> trueSentences = new ArrayList<>();
             //populate said list with the sentences created based on the splitting
