@@ -22,14 +22,12 @@ public abstract class LexicalParser {
 
             //create the list of sentences that will be returned
             String[] trueSentences = Arrays.stream(sentences)
-
                     .filter(sentence ->sentencePattern.matcher(sentence).find())
                     .filter(sentence -> sentence.endsWith(".")||sentence.endsWith("?")||sentence.endsWith("!"))
                     .toArray(String[]::new);
 
-            List<String> returnSentences = List.of(trueSentences);
             //return the sentences
-            return returnSentences;
+            return List.of(trueSentences);
 
             //if for whatever reason there is an error, throw an IO exception
         }catch (IOException e){
@@ -57,5 +55,4 @@ public abstract class LexicalParser {
         //return the tokens
         return trueTokens;
     }
-
 }

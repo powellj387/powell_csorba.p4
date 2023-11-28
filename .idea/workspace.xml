@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e090d46b-6c02-44c2-9dc6-a3ee9b19db4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/sentenceTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/LexicalParserTest.java" afterDir="false" />
+    <list default="true" id="e090d46b-6c02-44c2-9dc6-a3ee9b19db4f" name="Changes" comment="finished ms1 I think and added the beginning of a test file for it would maybe like to clean up a bit">
+      <change afterPath="$PROJECT_DIR$/resources/dracula.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/frankenstein.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/markov/InsufficientMarkovChainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/markov/InvalidInputException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/markov/Milestone2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/markov/UnigramSalad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/powell_csorba.p4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/powell_csorba.p4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/markov/LexicalParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/markov/LexicalParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/markov/Milestone1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/markov/Milestone1.java" afterDir="false" />
     </list>
@@ -36,24 +39,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/julia/IdeaProjects/powell_csorba.p4/resources"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/julia/IdeaProjects/powell_csorba.p4/resources&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\julia\IdeaProjects\powell_csorba.p4\resources" />
       <recent name="C:\Users\julia\IdeaProjects\powell_csorba.p4\src\test" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\julia\IdeaProjects\powell_csorba.p4\resources" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.LexicalParserTest">
+  <component name="RunManager" selected="Application.Milestone1">
     <configuration name="LexicalParserCompilationStub" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.LexicalParserCompilationStub" />
       <module name="powell_csorba.p4" />
@@ -71,7 +77,7 @@
     <configuration name="Milestone1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="markov.Milestone1" />
       <module name="powell_csorba.p4" />
-      <option name="PROGRAM_PARAMETERS" value="resources/alice.txt" />
+      <option name="PROGRAM_PARAMETERS" value="resources/frankenstein.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="markov.*" />
@@ -97,15 +103,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LexicalParserTest.tokenizeWackySentenceCorrectValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="powell_csorba.p4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.LexicalParserTest" />
+      <option name="METHOD_NAME" value="tokenizeWackySentenceCorrectValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Milestone1" />
       <item itemvalue="Application.LexicalParserCompilationStub" />
+      <item itemvalue="JUnit.LexicalParserTest.tokenizeWackySentenceCorrectValue" />
       <item itemvalue="JUnit.LexicalParserTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LexicalParserTest" />
         <item itemvalue="Application.Milestone1" />
+        <item itemvalue="JUnit.LexicalParserTest.tokenizeWackySentenceCorrectValue" />
+        <item itemvalue="JUnit.LexicalParserTest" />
         <item itemvalue="Application.LexicalParserCompilationStub" />
       </list>
     </recent_temporary>
@@ -119,17 +143,18 @@
       <option name="presentableId" value="Default" />
       <updated>1699995753070</updated>
     </task>
+    <task id="LOCAL-00001" summary="finished ms1 I think and added the beginning of a test file for it would maybe like to clean up a bit">
+      <created>1701137445209</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701137445209</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/markov/LexicalParser.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finished ms1 I think and added the beginning of a test file for it would maybe like to clean up a bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished ms1 I think and added the beginning of a test file for it would maybe like to clean up a bit" />
   </component>
 </project>
