@@ -2,6 +2,7 @@ package markov;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -25,10 +26,16 @@ public class Milestone1 {
             int numSentences = sentences.size();
 
             // Tokenize each sentence and collect unique tokens
-            Set<String> uniqueTokens = new HashSet<>();
+            ArrayList<String> uniqueTokens = new ArrayList<>();
             for (String sentence : sentences) {
                 List<String> tokens = LexicalParser.tokenizeSentence(sentence);
-                uniqueTokens.addAll(tokens);
+
+                for(String token : tokens) {
+                    //ensures there are no repeat tokens
+                    if(!uniqueTokens.contains(token)){
+                        uniqueTokens.add(token);
+                    }
+                }
             }
 
             // Count the number of unique tokens

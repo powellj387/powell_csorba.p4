@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e090d46b-6c02-44c2-9dc6-a3ee9b19db4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/sentenceTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/LexicalParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/powell_csorba.p4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/powell_csorba.p4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/markov/LexicalParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/markov/LexicalParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/markov/Milestone1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/markov/Milestone1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,20 +36,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/julia/IdeaProjects/powell_csorba.p4/resources&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/julia/IdeaProjects/powell_csorba.p4/resources"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\julia\IdeaProjects\powell_csorba.p4\resources" />
       <recent name="C:\Users\julia\IdeaProjects\powell_csorba.p4\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LexicalParserCompilationStub">
+  <component name="RunManager" selected="JUnit.LexicalParserTest">
     <configuration name="LexicalParserCompilationStub" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.LexicalParserCompilationStub" />
       <module name="powell_csorba.p4" />
@@ -74,14 +82,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LexicalParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="powell_csorba.p4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.LexicalParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Milestone1" />
       <item itemvalue="Application.LexicalParserCompilationStub" />
+      <item itemvalue="JUnit.LexicalParserTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LexicalParserCompilationStub" />
+        <item itemvalue="JUnit.LexicalParserTest" />
         <item itemvalue="Application.Milestone1" />
+        <item itemvalue="Application.LexicalParserCompilationStub" />
       </list>
     </recent_temporary>
   </component>
@@ -95,5 +120,16 @@
       <updated>1699995753070</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/markov/LexicalParser.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
