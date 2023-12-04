@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e090d46b-6c02-44c2-9dc6-a3ee9b19db4f" name="Changes" comment="finished ms1 I think and added the beginning of a test file for it would maybe like to clean up a bit">
+    <list default="true" id="e090d46b-6c02-44c2-9dc6-a3ee9b19db4f" name="Changes" comment="trying stuff for ms2">
+      <change afterPath="$PROJECT_DIR$/src/test/UnigramSaladTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/markov/Milestone2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/markov/Milestone2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/markov/UnigramSalad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/markov/UnigramSalad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,21 +52,7 @@
       <recent name="C:\Users\julia\IdeaProjects\powell_csorba.p4\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Milestone2">
-    <configuration name="LexicalParserCompilationStub" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.LexicalParserCompilationStub" />
-      <module name="powell_csorba.p4" />
-      <option name="PROGRAM_PARAMETERS" value="alice.txt" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UnigramSaladTest">
     <configuration name="Milestone1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="markov.Milestone1" />
       <module name="powell_csorba.p4" />
@@ -85,6 +70,7 @@
     <configuration name="Milestone2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="markov.Milestone2" />
       <module name="powell_csorba.p4" />
+      <option name="PROGRAM_PARAMETERS" value="12345" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="markov.*" />
@@ -95,7 +81,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LexicalParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UnigramSaladTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.UnigramSaladTest" />
+      <module name="powell_csorba.p4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnigramSaladTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="powell_csorba.p4" />
       <extension name="coverage">
         <pattern>
@@ -104,13 +103,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.LexicalParserTest" />
+      <option name="MAIN_CLASS_NAME" value="test.UnigramSaladTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LexicalParserTest.tokenizeWackySentenceCorrectValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UnigramSaladTest.testGenerateSentence" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="powell_csorba.p4" />
       <extension name="coverage">
         <pattern>
@@ -119,27 +118,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.LexicalParserTest" />
-      <option name="METHOD_NAME" value="tokenizeWackySentenceCorrectValue" />
+      <option name="MAIN_CLASS_NAME" value="test.UnigramSaladTest" />
+      <option name="METHOD_NAME" value="testGenerateSentence" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UnigramSaladTest" />
       <item itemvalue="Application.Milestone2" />
       <item itemvalue="Application.Milestone1" />
-      <item itemvalue="Application.LexicalParserCompilationStub" />
-      <item itemvalue="JUnit.LexicalParserTest.tokenizeWackySentenceCorrectValue" />
-      <item itemvalue="JUnit.LexicalParserTest" />
+      <item itemvalue="JUnit.UnigramSaladTest" />
+      <item itemvalue="JUnit.UnigramSaladTest.testGenerateSentence" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UnigramSaladTest" />
+        <item itemvalue="Application.UnigramSaladTest" />
+        <item itemvalue="JUnit.UnigramSaladTest.testGenerateSentence" />
         <item itemvalue="Application.Milestone2" />
         <item itemvalue="Application.Milestone1" />
-        <item itemvalue="JUnit.LexicalParserTest.tokenizeWackySentenceCorrectValue" />
-        <item itemvalue="JUnit.LexicalParserTest" />
-        <item itemvalue="Application.LexicalParserCompilationStub" />
       </list>
     </recent_temporary>
   </component>
@@ -159,11 +158,19 @@
       <option name="project" value="LOCAL" />
       <updated>1701137445209</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="trying stuff for ms2">
+      <created>1701724265744</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701724265744</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finished ms1 I think and added the beginning of a test file for it would maybe like to clean up a bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished ms1 I think and added the beginning of a test file for it would maybe like to clean up a bit" />
+    <MESSAGE value="trying stuff for ms2" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying stuff for ms2" />
   </component>
 </project>
