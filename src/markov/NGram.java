@@ -57,7 +57,7 @@ public class NGram implements Comparable<NGram> {
 
     // Returns a string representation of the NGram, with tokens separated by a delimiter
     public String toString() {
-        return String.join(String.valueOf(DELIMITER), this.grams);
+        return String.join(" ", grams);
     }
 
     // Compares this NGram to another NGram based on their string representations
