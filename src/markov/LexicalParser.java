@@ -41,9 +41,9 @@ public abstract class LexicalParser {
         //Split the input up depending on token ending criteria
         String[] tokens = trueInput.split("\\s+");
 
-        //Ensure that every token contains at least 1 \w character
+        /*//Ensure that every token contains at least 1 \w character
         Pattern tokenPattern = Pattern.compile("\\w");
-
+*/
         //create list of tokens to be returned
         List<String> trueTokens = new ArrayList<>();
         //populate said list with the tokens created based on splitting
