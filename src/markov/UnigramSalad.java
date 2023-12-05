@@ -36,21 +36,16 @@ public class UnigramSalad {
     }
 
     private String chooseNextToken(Map<String, Integer> nextTokens) {
-
         List<Map.Entry<String, Integer>> sortedTransitions = new ArrayList<>(nextTokens.entrySet());
-
         sortedTransitions.sort(Comparator.comparing(Map.Entry::getKey));
-
         int totalWeight = sortedTransitions.stream().mapToInt(Map.Entry::getValue).sum();
-
         int randomWeight = rand.nextInt(totalWeight) + 1;
-
-        int accumolatedweight = 0;
+        int accumulatedweight = 0;
 
         for (Map.Entry<String, Integer> entry : sortedTransitions) {
 
-            accumolatedweight += entry.getValue();
-            if (randomWeight <= accumolatedweight) {
+            accumulatedweight += entry.getValue();
+            if (randomWeight <= accumulatedweight) {
                 return entry.getKey();
             }
         }
