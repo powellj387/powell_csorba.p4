@@ -8,7 +8,7 @@ import java.util.List;
 public class ConsoleInterface {
     public static void main(String[] args) {
 
-        if (args.length != 3) {
+        if (args.length != 4) {
             System.err.println("Usage: java markov.Milestone2 <corpus_path> <seed> <num_sentences");
             System.exit(1);
         }

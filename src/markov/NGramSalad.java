@@ -17,16 +17,19 @@ public class NGramSalad {
         if (tokens.isEmpty()) {
             throw new InvalidInputException("The list of tokens must contain at least one token");
         }
-        NGram nGram = new NGram(n);
-        for (String token : tokens) {
-            nGram = nGram.add(token);
-            if (nGram.size() == n) {
-                NGram key = new NGram(n);
-                for (String gram : nGram.extractTokens().subList(0, n - 1)) {
-                    key = key.add(gram);
+        List<String> tokenList = new ArrayList<>(tokens);
+        for (int i = 0; i < tokenList.size(); i++) {
+            NGram nGram = new NGram(n);
+            for (int j = i; j < i + n && j < tokenList.size(); j++) {
+                nGram = nGram.add(tokenList.get(j));
+                if (nGram.size() == n) {
+                    NGram key = new NGram(n);
+                    for (String gram : nGram.extractTokens().subList(0, n - 1)) {
+                        key = key.add(gram);
+                    }
+                    markovChain.putIfAbsent(key, new ArrayList<>());
+                    markovChain.get(key).add(nGram.last());
                 }
-                markovChain.putIfAbsent(key, new ArrayList<>());
-                markovChain.get(key).add(nGram.last());
             }
         }
     }
