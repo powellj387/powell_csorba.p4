@@ -1,3 +1,4 @@
+//@author Julian Powell and Alex Csorba
 package markov;
 
 import java.io.IOException;

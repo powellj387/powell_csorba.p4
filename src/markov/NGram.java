@@ -1,3 +1,4 @@
+//@author Julian Powell and Alex Csorba
 package markov;
 
 import java.util.ArrayList;
@@ -44,10 +45,14 @@ public class NGram implements Comparable<NGram> {
 
     // Checks if another object is an NGram with the same tokens
     public boolean equals(Object otherObject) {
-        if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
-        NGram nGram = (NGram) otherObject;
-        return grams.equals(nGram.grams);
+        boolean result = false;
+        if (this == otherObject) {
+            result = true;
+        } else if (otherObject != null && getClass() == otherObject.getClass()) {
+            NGram nGram = (NGram) otherObject;
+            result = grams.equals(nGram.grams);
+        }
+        return result;
     }
 
     // Returns a hash code value for the NGram

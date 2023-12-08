@@ -1,3 +1,4 @@
+//@author Julian Powell and Alex Csorba
 package test;
 import org.junit.jupiter.api.Test;
 import markov.LexicalParser;

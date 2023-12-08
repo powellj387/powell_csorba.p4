@@ -1,74 +1,77 @@
+//@author Julian Powell and Alex Csorba
 package markov;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UnigramSalad {
-    private Map<String, Map<String, Integer>> markovChain;
+    private final Map<String, Map<String, Integer>> markovChain;
     private final Random rand;
-    
-    public UnigramSalad(int seed){
+
+    public UnigramSalad(int seed) {
         this.markovChain = new HashMap<>();
         this.rand = new Random(seed);
-        //put the first "special vertex in the map with an empty successor list
-        markovChain.computeIfAbsent("", k-> new HashMap<>());
+        markovChain.put("", new HashMap<>());  // Special vertex with an empty successor list
     }
 
-    public void addOrderedTokens(java.util.Collection<java.lang.String> tokens) throws InvalidInputException{
-        Set<String> sentenceEnders = new HashSet<>(Arrays.asList(".","!","?"));
-        if(tokens == null||tokens.isEmpty()){
-            throw new InvalidInputException("The list of n-grams must contain at least one n-gram");
+    public void addOrderedTokens(Collection<String> tokens) throws InvalidInputException {
+        Set<String> sentenceEnders = new HashSet<>(Arrays.asList(".", "!", "?"));
+        if (tokens == null || tokens.isEmpty()) {
+            throw new InvalidInputException("The list of tokens must contain at least one token");
         }
-        //for every token check to see if in graph
-        //if not in graph add to graph then create edge from token to next one
+
         String prevToken = "s";
-        for(String token : tokens) {
-            if (prevToken != null) {
-                markovChain.computeIfAbsent(prevToken, k -> new HashMap<>());
-                Map<String, Integer> currentToken = markovChain.get(prevToken);
-                currentToken.put(token, currentToken.getOrDefault(token, 0)+1);
-            }
-            if(sentenceEnders.stream().anyMatch(token::endsWith)){
-                prevToken = "s";
-            }else{
-                prevToken = token;
-            }
+
+        for (String currentToken : tokens) {
+            markovChain.computeIfAbsent(prevToken, k -> new HashMap<>())
+                    .merge(currentToken, 1, Integer::sum);
+
+            prevToken = sentenceEnders.stream().anyMatch(currentToken::endsWith) ? "s" : currentToken;
         }
     }
 
     private String chooseNextToken(Map<String, Integer> nextTokens) {
-        List<Map.Entry<String, Integer>> sortedTransitions = new ArrayList<>(nextTokens.entrySet());
-        sortedTransitions.sort(Comparator.comparing(Map.Entry::getKey));
-        int totalWeight = sortedTransitions.stream().mapToInt(Map.Entry::getValue).sum();
+        List<String> sortedTransitions = nextTokens.keySet().stream()
+                .sorted()
+                .collect(Collectors.toList());
+
+        int totalWeight = sortedTransitions.stream().mapToInt(nextTokens::get).sum();
         int randomWeight = rand.nextInt(totalWeight) + 1;
-        int accumulatedweight = 0;
+        int tokenWeight = 0;
+        String chosenToken = null;
 
-        for (Map.Entry<String, Integer> entry : sortedTransitions) {
-
-            accumulatedweight += entry.getValue();
-            if (randomWeight <= accumulatedweight) {
-                return entry.getKey();
+        for (String token : sortedTransitions) {
+            tokenWeight += nextTokens.get(token);
+            if (randomWeight <= tokenWeight) {
+                chosenToken = token;
+                break;
             }
         }
-        return null;
+
+        return chosenToken;
     }
-    public java.lang.String generateSentence() throws InsufficientMarkovChainException{
-       StringBuilder sentence = new StringBuilder();
-       String currentToken = "s";
 
-       while(true){
-           Map<String, Integer> nextTokens = markovChain.get(currentToken);
 
-           if(nextTokens==null||nextTokens.isEmpty()){
-               break;
-           }
+    public String generateSentence() throws InsufficientMarkovChainException {
+        StringBuilder sentence = new StringBuilder();
+        String currentToken = "s";
 
-           String nextToken = chooseNextToken(nextTokens);
+        while (true) {
+            Map<String, Integer> nextTokens = markovChain.get(currentToken);
 
-           if(nextToken!=null){
-               sentence.append(nextToken).append(" ");
-               currentToken = nextToken;
-           }
-       }
-       return sentence.toString().trim();
+            if (nextTokens == null || nextTokens.isEmpty()) {
+                break;
+            }
+
+            String nextToken = chooseNextToken(nextTokens);
+
+            if (nextToken != null) {
+                sentence.append(nextToken).append(" ");
+                currentToken = nextToken;
+            }
+        }
+
+        return sentence.toString().trim();
     }
 }
+

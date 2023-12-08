@@ -1,4 +1,4 @@
-
+//@author Julian Powell and Alex Csorba
 package markov;
 
 import java.util.*;
